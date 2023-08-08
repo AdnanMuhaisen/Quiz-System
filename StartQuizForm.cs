@@ -13,12 +13,15 @@ namespace Quiz_System
 {
     public partial class StartQuizForm : Form
     {
-        public int DepartmentID = default, SubjectID = default;
-        public string DepartmentName=default, SubjectName=default;
+        private int DepartmentID = default, SubjectID = default;
+        private string DepartmentName=default, SubjectName=default;
+        private clsUser _CurrentUser;
 
-        public StartQuizForm()
+
+        public StartQuizForm(clsUser CurrentUser)
         {
             InitializeComponent();
+            this._CurrentUser = CurrentUser;
             _ShowDateAndTime();
         }
 
@@ -72,15 +75,13 @@ namespace Quiz_System
         private void btnStart_Click(object sender, EventArgs e)
         {
             clsQuiz NewQuiz=new clsQuiz(this.DepartmentName,this.SubjectID,this.SubjectName);
-            ApplyToQuizFrm = new ApplyToQuizForm(NewQuiz);
+            ApplyToQuizFrm = new ApplyToQuizForm(_CurrentUser,NewQuiz);
             this.Hide();
             if (ApplyToQuizFrm.ShowDialog() == DialogResult.Cancel)
             {
                 this._ResetFormData();
                 this.Show();
             }
-
-
         }
 
         private void comboBox_Validating(object sender, CancelEventArgs e)
@@ -136,6 +137,11 @@ namespace Quiz_System
         private void btnClear_Click(object sender, EventArgs e)
         {
             this._ResetFormData();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void _LblReadyMessageController(string SubjectName,bool Visible)

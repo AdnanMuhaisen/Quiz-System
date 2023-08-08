@@ -56,6 +56,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblReadyMessage = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelDateAndTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -63,6 +64,7 @@
             // 
             // lblStartQuizFormHeader
             // 
+            this.lblStartQuizFormHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStartQuizFormHeader.AutoSize = true;
             this.lblStartQuizFormHeader.Font = new System.Drawing.Font("Simple Bold Jut Out", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblStartQuizFormHeader.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -74,14 +76,15 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(157)))), ((int)(((byte)(231)))));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.departmentsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(134, 634);
+            this.menuStrip1.Size = new System.Drawing.Size(136, 64);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,7 +101,7 @@
             this.departmentsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.departmentsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.departmentsToolStripMenuItem.Name = "departmentsToolStripMenuItem";
-            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(121, 30);
+            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(128, 30);
             this.departmentsToolStripMenuItem.Text = "Departments";
             // 
             // cSToolStripMenuItem
@@ -145,6 +148,7 @@
             // 
             // lblQuizSubject
             // 
+            this.lblQuizSubject.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblQuizSubject.AutoSize = true;
             this.lblQuizSubject.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblQuizSubject.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -156,6 +160,7 @@
             // 
             // comboBoxSubject
             // 
+            this.comboBoxSubject.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.Location = new System.Drawing.Point(344, 183);
@@ -167,6 +172,7 @@
             // 
             // comboBoxDepartments
             // 
+            this.comboBoxDepartments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBoxDepartments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDepartments.FormattingEnabled = true;
             this.comboBoxDepartments.Location = new System.Drawing.Point(344, 109);
@@ -177,6 +183,7 @@
             // 
             // lblDepartment
             // 
+            this.lblDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDepartment.AutoSize = true;
             this.lblDepartment.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblDepartment.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -188,6 +195,7 @@
             // 
             // lblWelcomeMessage
             // 
+            this.lblWelcomeMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblWelcomeMessage.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblWelcomeMessage.ForeColor = System.Drawing.Color.White;
             this.lblWelcomeMessage.Location = new System.Drawing.Point(668, 93);
@@ -200,6 +208,7 @@
             // 
             // panelDateAndTime
             // 
+            this.panelDateAndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDateAndTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelDateAndTime.Controls.Add(this.lblShowUTCDateTime);
             this.panelDateAndTime.Controls.Add(this.lblUTCDateTime);
@@ -287,8 +296,9 @@
             // 
             // btnStart
             // 
+            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnStart.Enabled = false;
-            this.btnStart.Location = new System.Drawing.Point(379, 502);
+            this.btnStart.Location = new System.Drawing.Point(254, 502);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(234, 38);
             this.btnStart.TabIndex = 10;
@@ -298,7 +308,8 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(714, 502);
+            this.btnClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClear.Location = new System.Drawing.Point(585, 502);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(234, 38);
             this.btnClear.TabIndex = 11;
@@ -308,6 +319,7 @@
             // 
             // lblReadyMessage
             // 
+            this.lblReadyMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblReadyMessage.Font = new System.Drawing.Font("Segoe UI Variable Display", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadyMessage.ForeColor = System.Drawing.Color.Green;
             this.lblReadyMessage.Location = new System.Drawing.Point(259, 262);
@@ -316,12 +328,24 @@
             this.lblReadyMessage.TabIndex = 12;
             this.lblReadyMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogout.Location = new System.Drawing.Point(896, 502);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(234, 38);
+            this.btnLogout.TabIndex = 13;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // StartQuizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(157)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1313, 634);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.lblReadyMessage);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnStart);
@@ -337,6 +361,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StartQuizForm";
             this.Text = "Choose Your Quiz";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.StartQuizForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -376,6 +401,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lblReadyMessage;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

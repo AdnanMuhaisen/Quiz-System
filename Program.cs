@@ -16,7 +16,7 @@ namespace Quiz_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartQuizForm());
+            Application.Run(new LoginForm());
         }
     }
 }

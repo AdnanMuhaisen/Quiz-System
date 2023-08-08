@@ -16,11 +16,12 @@ namespace Quiz_System
         private clsQuiz _Quiz;
         private int _IndexOfQuizQuestion;
         private ShowQuizResultForm _ShowQuizResultForm;
+        private clsUser _CurrentUser;
 
-
-        public ApplyToQuizForm(clsQuiz Quiz)
+        public ApplyToQuizForm(clsUser CurrentUser,clsQuiz Quiz)
         {
             InitializeComponent();
+            this._CurrentUser = CurrentUser;
             this._Quiz = Quiz;
             _IndexOfQuizQuestion = 0;
         }
@@ -31,6 +32,8 @@ namespace Quiz_System
             lblShowSubject.Text = _Quiz.SubjectName;
             lblShowDate.Text = DateTime.Now.ToShortDateString();
             lblShowTime.Text = DateTime.Now.ToShortTimeString();
+            lblShowCurrentUser.Text = _CurrentUser.UserNameOrEmail;
+
 
             _ShowAQuestion(_Quiz.QuestionsList[_IndexOfQuizQuestion]);
             _SetTagOfQuestionResult(_Quiz.QuestionsList[_IndexOfQuizQuestion++]);

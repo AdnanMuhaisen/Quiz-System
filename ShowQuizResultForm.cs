@@ -31,7 +31,7 @@ namespace Quiz_System
             lblShowResult.Text = _GetQuizResult();
         }
 
-        private string _GetQuizResult() => (this.Score >= 50.0) ? "PASS :)" : "FAIL :(";
+        private string _GetQuizResult() => (this.Score*100.0 >= 50.0) ? "PASS :)" : "FAIL :(";
  
         private void btnGoToStart_Click(object sender, EventArgs e)
         {

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplyToQuizForm));
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.lblShowCurrentUser = new System.Windows.Forms.Label();
+            this.lblCurrentUser = new System.Windows.Forms.Label();
             this.lblShowSubject = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblShowQuizDepartment = new System.Windows.Forms.Label();
@@ -54,6 +57,9 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(148)))), ((int)(((byte)(210)))));
+            this.panelHeader.Controls.Add(this.lblHeader);
+            this.panelHeader.Controls.Add(this.lblShowCurrentUser);
+            this.panelHeader.Controls.Add(this.lblCurrentUser);
             this.panelHeader.Controls.Add(this.lblShowSubject);
             this.panelHeader.Controls.Add(this.lblSubject);
             this.panelHeader.Controls.Add(this.lblShowQuizDepartment);
@@ -68,22 +74,59 @@
             this.panelHeader.Size = new System.Drawing.Size(1394, 161);
             this.panelHeader.TabIndex = 0;
             // 
+            // lblHeader
+            // 
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Simple Bold Jut Out", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblHeader.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblHeader.Location = new System.Drawing.Point(638, 17);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(184, 41);
+            this.lblHeader.TabIndex = 10;
+            this.lblHeader.Text = "Quiz Master";
+            // 
+            // lblShowCurrentUser
+            // 
+            this.lblShowCurrentUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblShowCurrentUser.AutoSize = true;
+            this.lblShowCurrentUser.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblShowCurrentUser.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblShowCurrentUser.Location = new System.Drawing.Point(1114, 17);
+            this.lblShowCurrentUser.Name = "lblShowCurrentUser";
+            this.lblShowCurrentUser.Size = new System.Drawing.Size(0, 25);
+            this.lblShowCurrentUser.TabIndex = 9;
+            // 
+            // lblCurrentUser
+            // 
+            this.lblCurrentUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCurrentUser.AutoSize = true;
+            this.lblCurrentUser.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblCurrentUser.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCurrentUser.Location = new System.Drawing.Point(974, 17);
+            this.lblCurrentUser.Name = "lblCurrentUser";
+            this.lblCurrentUser.Size = new System.Drawing.Size(61, 25);
+            this.lblCurrentUser.TabIndex = 8;
+            this.lblCurrentUser.Text = "User :";
+            // 
             // lblShowSubject
             // 
+            this.lblShowSubject.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblShowSubject.AutoSize = true;
             this.lblShowSubject.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblShowSubject.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblShowSubject.Location = new System.Drawing.Point(614, 88);
+            this.lblShowSubject.Location = new System.Drawing.Point(1114, 113);
             this.lblShowSubject.Name = "lblShowSubject";
             this.lblShowSubject.Size = new System.Drawing.Size(0, 25);
             this.lblShowSubject.TabIndex = 7;
             // 
             // lblSubject
             // 
+            this.lblSubject.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSubject.AutoSize = true;
             this.lblSubject.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblSubject.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblSubject.Location = new System.Drawing.Point(490, 88);
+            this.lblSubject.Location = new System.Drawing.Point(974, 113);
             this.lblSubject.Name = "lblSubject";
             this.lblSubject.Size = new System.Drawing.Size(85, 25);
             this.lblSubject.TabIndex = 6;
@@ -91,20 +134,22 @@
             // 
             // lblShowQuizDepartment
             // 
+            this.lblShowQuizDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblShowQuizDepartment.AutoSize = true;
             this.lblShowQuizDepartment.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblShowQuizDepartment.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblShowQuizDepartment.Location = new System.Drawing.Point(614, 27);
+            this.lblShowQuizDepartment.Location = new System.Drawing.Point(1114, 66);
             this.lblShowQuizDepartment.Name = "lblShowQuizDepartment";
             this.lblShowQuizDepartment.Size = new System.Drawing.Size(0, 25);
             this.lblShowQuizDepartment.TabIndex = 5;
             // 
             // lblDepartment
             // 
+            this.lblDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDepartment.AutoSize = true;
             this.lblDepartment.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblDepartment.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblDepartment.Location = new System.Drawing.Point(490, 27);
+            this.lblDepartment.Location = new System.Drawing.Point(974, 66);
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(119, 25);
             this.lblDepartment.TabIndex = 4;
@@ -112,6 +157,7 @@
             // 
             // lblShowTime
             // 
+            this.lblShowTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblShowTime.AutoSize = true;
             this.lblShowTime.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblShowTime.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -122,6 +168,7 @@
             // 
             // lblTime
             // 
+            this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -133,6 +180,7 @@
             // 
             // lblShowDate
             // 
+            this.lblShowDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblShowDate.AutoSize = true;
             this.lblShowDate.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblShowDate.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -143,6 +191,7 @@
             // 
             // lblDate
             // 
+            this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Simple Bold Jut Out", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblDate.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -246,6 +295,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ApplyToQuizForm";
             this.Text = "ApplyToQuizForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ApplyToQuizForm_Load);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -274,5 +324,8 @@
         private System.Windows.Forms.Label lblShowQuestion;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Timer timerDateTime;
+        private System.Windows.Forms.Label lblShowCurrentUser;
+        private System.Windows.Forms.Label lblCurrentUser;
+        private System.Windows.Forms.Label lblHeader;
     }
 }

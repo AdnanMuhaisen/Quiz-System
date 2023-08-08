@@ -152,6 +152,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShowQuizResultForm";
             this.Text = "Quiz Result";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ShowQuizResultForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
