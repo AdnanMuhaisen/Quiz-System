@@ -123,6 +123,7 @@
             this.linkLabelForgetPassword.TabIndex = 3;
             this.linkLabelForgetPassword.TabStop = true;
             this.linkLabelForgetPassword.Text = "Forget Password ?";
+            this.linkLabelForgetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelForgetPassword_LinkClicked);
             // 
             // textBoxPassword
             // 

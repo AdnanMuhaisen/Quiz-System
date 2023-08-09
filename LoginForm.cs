@@ -15,10 +15,13 @@ namespace Quiz_System
     {
         private SignupForm _SignUp;
         private StartQuizForm _StartQuizForm;
+        private ForgetPasswordForm _ForgetPasswordForm;
+
         public LoginForm()
         {
             InitializeComponent();
             _SignUp = new SignupForm();
+            _ForgetPasswordForm = new ForgetPasswordForm();
         }
 
         private void btnLoginNow_Click(object sender, EventArgs e)
@@ -77,6 +80,14 @@ namespace Quiz_System
             lblLoginMessage.Text = string.Empty;
         }
 
-        
+        private void linkLabelForgetPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            if (_ForgetPasswordForm.ShowDialog() == DialogResult.Cancel)
+            {
+                this._ResetTheForm();
+                this.Show();
+            }
+        }
     }
 }
