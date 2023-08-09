@@ -31,6 +31,15 @@ namespace Quiz_System___Middle_Layer
             this.UserMode = eUserMode.Update;
         }
 
+        public clsUser(string UserNameOrEmail, string Password,string HashValue)
+        {
+            this.UserNameOrEmail = UserNameOrEmail;
+            this.Password = Password;
+            this.HashValue = HashValue;
+            this.UserMode = eUserMode.Update;
+        }
+
+
         public static bool IsUserExist(string UserNameOrEmail)
         {
             return DataAccess.IsUserExist(UserNameOrEmail);
@@ -38,7 +47,7 @@ namespace Quiz_System___Middle_Layer
 
         private bool _AddNewUser()
         {
-            this.Salt = new Random().Next(0, int.MaxValue);
+            this.Salt = clsHasher.GenerateSaltValue();
             this.HashValue = clsHasher.EncryptHashValue(clsHasher.ComputeSha256Hash(this.Password + Convert.ToString(this.Salt)));
             return DataAccess.AddNewUser(this.UserNameOrEmail, this.HashValue, this.Salt);
         }
@@ -57,6 +66,27 @@ namespace Quiz_System___Middle_Layer
             return false;
         }
 
+        public static clsUser FindUser(string UserNameOrEmail)
+        {
+            string HashValue = default; int Salt = default;
+            if(DataAccess.FindUser(UserNameOrEmail,ref HashValue,ref Salt))
+            {
+                // To Return Original Password :
+                HashValue = clsHasher.DecryptHashValue(HashValue);
+                clsUser Temp = new clsUser(UserNameOrEmail, default, HashValue);
+                Temp.Salt = Salt;
+                return Temp;
+            }
+            return null;
+        }
+
+        private bool _Update()
+        {
+            this.Salt = clsHasher.GenerateSaltValue();
+            this.HashValue = clsHasher.EncryptHashValue(clsHasher.ComputeSha256Hash(this.Password + this.Salt.ToString()));
+            return DataAccess.UpdateUserInformation(this.UserNameOrEmail, this.HashValue, this.Salt);
+        }
+
         public bool Save()
         {
             switch (this.UserMode)
@@ -70,10 +100,10 @@ namespace Quiz_System___Middle_Layer
                     break;
 
                 case eUserMode.Update:
-
-                    break;
+                    return this._Update();
             }
             return false;
         }
+
     }
 }

@@ -46,6 +46,9 @@ namespace Quiz_System___Middle_Layer
             return builder.ToString();
         }
 
-
+        public static int GenerateSaltValue()
+        {
+            return new Random().Next(0, int.MaxValue);
+        }
     }
 }

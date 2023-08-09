@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Quiz_System___Data_Access_Layer
 {
     public class DataAccess
     {
-        static string ConnectionString = "Server=.;Database = QuizSystem_DB;User ID=sa;Password=sa123456;";
+        static readonly string ConnectionString = "Server=.;Database = QuizSystem_DB;User ID=sa;Password=sa123456;";
 
         // For Users Table :
         public static bool IsUserExist(string UsernameOrEmail)
@@ -81,12 +82,65 @@ namespace Quiz_System___Data_Access_Layer
             return T;
         }
 
+        public static bool FindUser(string UsernameOrEmail,ref string HashValue,ref int Salt)
+        {
+            SqlConnection Connection=new SqlConnection(ConnectionString);
+            string Query = @"SELECT HashValue,Salt FROM Users WHERE UsernameOrEmail = @UsernameOrEmail";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            bool IsFound = false;
+
+            Command.Parameters.AddWithValue("@UsernameOrEmail", UsernameOrEmail);
+
+            try
+            {
+                Connection.Open();
+                SqlDataReader Reader = Command.ExecuteReader();
+                if (Reader.Read())
+                {
+                    HashValue = Convert.ToString(Reader["HashValue"]);
+                    Salt = Convert.ToInt32(Reader["Salt"]);
+                    IsFound = true;
+                }
+                Reader.Close();
+            }
+            catch(Exception) { return false; }
+            finally { Connection.Close(); }
+
+            return IsFound;
+        }
+
+        public static bool UpdateUserInformation(string UsernameOrEmail, string HashValue,int Salt)
+        {
+            SqlConnection Connection = new SqlConnection(ConnectionString);
+            string Query = @"UPDATE Users
+                            SET HashValue = @HashValue,Salt= @Salt
+                            WHERE UsernameOrEmail = @UsernameOrEmail ;";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            bool IsUpdated = false;
+
+            Command.Parameters.AddWithValue ("@UsernameOrEmail", UsernameOrEmail);
+            Command.Parameters.AddWithValue("@HashValue", HashValue);
+            Command.Parameters.AddWithValue("@Salt", Salt);
+
+            try
+            {
+                Connection.Open();
+                IsUpdated = Command.ExecuteNonQuery() > 0;
+            }
+            catch (Exception) { return false; }
+            finally { Connection.Close(); }
+
+            return IsUpdated;
+        }
+
 
         /// <summary>
         /// Methods For Users Table :
         /// 1- IsExist
         /// 2- Add New User 
-        /// 
+        /// 3- Get Hash Value And Salt For Spicific User 
+        /// 4- Find User By name or email
+        /// 5- Update User Information
         /// </summary>
         /// <returns></returns>
 
